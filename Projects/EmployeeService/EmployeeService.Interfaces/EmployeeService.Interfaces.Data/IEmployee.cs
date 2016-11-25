@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EmployeeModels;
 namespace EmployeeService.Interfaces.EmployeeService.Interfaces.Data
 {
     public interface IEmployee
@@ -12,14 +12,24 @@ namespace EmployeeService.Interfaces.EmployeeService.Interfaces.Data
         /// <summary>
         /// Inserts Employee.
         /// </summary>
-        void InsertEmployee();
+        void InsertEmployee(EmployeeModel employee);
 
         /// <summary>
         /// Retrieve Employees.
         /// </summary>
         /// <returns></returns>
-        DataTable RetrieveEmployee();
+        IEnumerable<EmployeeModel> RetrieveEmployee();
 
-        void UpdateEmployee ()
+        /// <summary>
+        /// Updates Employee.
+        /// </summary>
+        /// <param name="employee"></param>
+        void UpdateEmployee(EmployeeModel employee);
+
+        /// <summary>
+        /// Deletes Employee.
+        /// </summary>
+        /// <param name="employee"></param>
+        void DeleteEmployee(int id);
     }
 }
